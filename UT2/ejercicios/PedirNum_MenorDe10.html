@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir Número</title>
+</head>
+<body>
+    <h1>Ejercicio de bucles</h1>
+
+    <script>
+        let num;
+        let a;
+        do {
+            num = prompt("Introduce un número menor que 10: ");
+            a = parseFloat(num);
+            // Comprobamos si se ha cancelado la introducción del valor
+            if (isNaN(a)) {
+                    // El usuario pulsa cancelar
+                    alert("Debes introducir un número menor que 10");
+            } else {
+                    // Si es mayor o igual a 10 mostramos mensaje de programa finalizado
+                if (a >= 10) {
+                    alert("Programa finalizado");
+                    }
+            }
+        } while(a<10);
+    </script>
+</body>
+</html>

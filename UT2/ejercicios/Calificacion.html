@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificación</title>
+</head>
+<body>
+    <h1>Calificación</h1>
+    <p>Abre la consola para ver el resultado</p>
+
+    <script>
+        // Pedimos el valor
+        let valor = prompt("Dime una calificación entre 1 y 10: ");
+
+        // Comprobamos si se ha cancelado la introducción del valor
+        if (valor === null) {
+                // El usuario pulsa cancelar
+                console.log("Operación cancelada por el usuario");
+        } else {
+            // Convertimos a número entero
+            let num = parseFloat(valor);
+            
+            if (isNaN(num) || num > 10 || num < 0) {
+                // Caso cadena no númerica
+                console.log("No has introducido una calificación válida");
+            } else {
+                // Caso correcto -> Mostramos por calificación (Insuficiente/Suficiente/Notable/Sobresaliente)
+                if (num >= 0 && num < 5) {
+                    console.log("Insuficiente");
+                } else if (num >= 5 && num < 7) {
+                    console.log("Suficiente");
+                } else if (num >= 7 && num < 9) {
+                    console.log("Notable");
+                } else {
+                    console.log("Sobresaliente")
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

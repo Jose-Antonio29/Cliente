@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Abre la consola</h1>
+    <script>
+        let alumnos=["Carlos","Ana","Luis"];
+        console.log(alumnos.includes("Marta"));         // False (Comprueba si existe)
+        alumnos.push("Marta");                          // ["Carlos","Ana","Luis","Marta"]   
+        console.log(alumnos.length);                    // 4
+        alumnos.sort();                                 // ordena alfabeticamente
+        alumnos.shift();                                // quita el primer elemento ["Ana","Luis","Marta"]
+        alumnos.indexOf("Marta");                       // 2
+        alumnos.unshift("Juan");                        // añade al principio
+        alumnos.pop();                                  // elimina el ultimo
+        alumnos.reverse();                              // invierte el orden 
+    
+    </script>
+</body>
+</html>

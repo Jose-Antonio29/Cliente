@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de conversión</title>
+</head>
+<body>
+    <h1>Ejemplo de conversión de datos</h1>
+
+    <script>
+        // Conversión con Number()
+        console.log("Conversión con Number()");
+        console.log(Number("42"));
+        console.log(Number("    42      "));
+        console.log(Number("3.14"));
+        console.log(Number("10px"));
+        console.log(Number(""));
+        console.log(Number("        "));
+        console.log(Number(null));
+        console.log(Number("abc"));
+
+        // Conversión con parseInt()
+        console.log("Conversión con parseInt()");
+        console.log(parseInt("42"));
+        console.log(parseInt("42abc"));
+        console.log(parseInt("      42abc"));
+        console.log(parseInt("3.14"));
+        console.log(parseInt("10px"));
+        console.log(parseInt("0xFF"));
+        console.log(parseInt("1010", 2));
+        console.log(parseInt(null));
+        console.log(parseInt("abc10"));
+
+        // Conversión con parseFloat()
+        console.log("Conversión con parseFloat()");
+        console.log(parseFloat("3.14"));
+        console.log(parseFloat("    3.14px      "));
+        console.log(parseFloat("10.0"));
+        console.log(parseFloat("2.5e3"));
+        console.log(parseFloat("42abc"));
+        console.log(parseFloat(null));
+        console.log(parseFloat("abc42"));
+    </script>
+</body>
+</html>

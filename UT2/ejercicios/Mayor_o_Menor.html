@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayor o menor</title>
+</head>
+<body>
+    <h1>Mayor o menor</h1>
+    <p>Abre la consola para ver el resultado</p>
+
+    <script>
+        // Pedimos el valor
+        let num1 = prompt("Dime el primer número: ");
+        let num2 = prompt("Dime el segundo número: ")
+
+        // Comprobamos si se ha cancelado la introducción del valor
+        if (num1 === null || num2 === null) {
+                // El usuario pulsa cancelar
+                console.log("Operación cancelada por el usuario");
+        } else {
+            // Convertimos a número entero
+            const a = parseFloat(num1);
+            const b = parseFloat(num2);
+            
+            if (isNaN(a) || isNaN(b)) {
+                // Caso cadena no númerica
+                console.log("No has introducido valores válidos");
+            } else {
+                // Caso correcto -> Mostramos por por pantalla cual es el menor y cual es el mayor o si son equivalentes
+                console.log("Valores introducidos: ", a,b);
+
+                if (a === b) {
+                    console.log("Son equivalentes");
+                } else {
+                    const mayor = a > b ? a : b;
+                    const menor = a > b ? b : a;
+                    console.log("Mayor: ", mayor);
+                    console.log("Menor: ", menor);
+                }
+            }
+        }
+    </script>
+</body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rombo</title>
+</head>
+<body>
+    <h1>Rombo</h1>
+    <pre id="r"></pre>
+    <script>
+        let altura = Number(prompt("Introduce un número entero positivo: "));
+        
+        if(!Number.isInteger(altura) || altura < 1) {
+            alert("Debes introducir un número entero positivo");
+        } else {
+            let res="";
+            for(i = 1; i<=altura; i++) {
+                for(j = 1; j <= altura-i; j++) {
+                    res+=" ";
+                }
+
+                for(j=1; j <= i*2-1; j++) {
+                    res+="*";
+                }
+                res+="<br>";
+            }
+
+            for(i = altura-1; i>=1; i--) {
+                for(j = 1; j <= altura-i; j++) {
+                    res+=" ";
+                }
+
+                for(j=1; j <= i*2-1; j++) {
+                    res+="*";
+                }
+                res+="<br>";
+            }
+            document.getElementById("r").innerHTML=res;
+        }
+        
+    </script>
+</body>
+</html>

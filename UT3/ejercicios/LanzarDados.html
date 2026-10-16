@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="estilos.css" rel="stylesheet" type="text/css" />
+    <style>
+        .dados {
+            display: flex;                  /* Permite mostrar los elementos uno al lado del otro */
+            justify-content: center;        /* Alineación horizontal */
+            align-items: center;            /* Alineación vertical */
+        }
+
+        .dados img {
+            margin: 10px;
+        }
+    </style>
+    <title>Lanzamiento de dados</title>
+  </head>
+  <body>
+    <h1>Lanzamiento de dados</h1>
+    <div class="dados">
+        <img id="dado1" src=""/>
+        <img id="dado2" src=""/>
+    </div>
+    <div class="caja" id="contenido"></div>
+    <script>
+      // Generamos las dos tiradas de los dados  
+      let num1 = parseInt(Math.random() * 6 + 1);
+      let num2 = parseInt(Math.random() * 6 + 1);
+
+      // Mostramos las imágenes de los dados
+      document.getElementById("dado1").src=`../images/dado${num1}.png`;
+      document.getElementById("dado2").src=`../images/dado${num2}.png`;
+
+
+      // Mostramos los resultados en la caja de contenido
+      let modContenido = document.getElementById("contenido");
+      modContenido.innerHTML = `<p><strong>Primer dado</strong>: ${num1}</p>
+                                <p><strong>Segundo dado</strong>: ${num2}</p>
+                                <p><strong>Suma total</strong>: ${num1 + num2}</p>`;
+      if (num1 > num2) {
+        modContenido.innerHTML += "<p><strong>El primer dado es mayor</strong></p>";
+      } else if (num2 > num1) {
+        modContenido.innerHTML += "<p><strong>El segundo dado es mayor</strong></p>";
+      } else {
+        modContenido.innerHTML += "<p><strong>¡Ambos dados son iguales!</strong></p>";
+      }
+    </script>
+  </body>
+</html>

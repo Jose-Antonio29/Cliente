@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos con typeof</title>
+</head>
+<body>
+    <h1>Comprobación de tipos de datos con typeof</h1>
+
+    <script>
+        // Tipos de datos primitivos
+        console.log(typeof "Hola Mundo");           // string               
+        console.log(typeof 42);                     // number
+        console.log(typeof 3.14);                   // number
+        console.log(typeof true);                   // boolean
+        console.log(typeof undefined);              // undefined
+        console.log(typeof null);                   // object (esto es una peculiaridad histórica de JS)
+        console.log(typeof 102391382190381938n);    // bigint
+        console.log(typeof Symbol("id"));           // symbol
+
+        console.log("=====================================================")
+
+        // Variables
+        let nombre = "Lucía";
+        console.log(typeof nombre);                 // string
+
+        let edad = 21;
+        console.log(typeof edad);                   // number
+
+        // Objetos y arrays
+        let persona = {nombre: "Ana", edad: 30};
+        console.log(typeof persona);                // object
+
+        let lista = [1, 2, 3];
+        console.log(typeof lista);                  // object (los arrays son objetos especiales)
+
+        // Funciones
+        function saludar() {
+            return "Hola";  
+        }
+        console.log(typeof saludar);                // function
+    </script>
+</body>
+</html>

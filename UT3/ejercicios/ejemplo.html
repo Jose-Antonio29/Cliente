@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo</title>
+</head>
+<body>
+    <script>
+        let nom = prompt("Introduce tu nombre:");
+
+        if (nom.trim() == "" || nom == null) {
+            console.log("El usuario ha cancelado la introducción de datos.")
+        } else {
+        let favNum = prompt("Introduce tu número favorito:");
+        if (favNum.trim() == "" || favNum == null) {
+            console.log("El usuario ha cancelado la introducción de datos.");
+        } else {
+            let x = Number(favNum);
+            if (isNaN(x)) {
+                console.log("El número introducido no es válido")
+            } else {
+                let persona = {nombre: nom, numeroFavorito: x};
+
+                console.log("Nombre en mayúsculas: ", persona.nombre.toUpperCase());
+                console.log("Número favorito: ", persona.numeroFavorito);
+                console.log("Cuadrado: ", Math.pow(persona.numeroFavorito, 2));
+                console.log("Redondeado: ", Math.round(persona.numeroFavorito));
+
+                const nombres = ["Pedro", "Mario", "Elena"];
+                nombres.push(persona.nombre);
+                nombres.sort();
+
+                console.log("Lista ordenada: ", nombres);
+                console.log("Total de nombres: ", nombres.length);
+            }
+        }
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba if/else</title>
+</head>
+<body>
+    <h1>Prueba con condicionales if/else</h1>
+    <p>Abre la consola para ver los resultados</p>
+
+    <script>
+        let edad = 20;
+
+        if (edad < 18) {
+            console.log("Menor de edad")
+        } else if (edad <= 65) {
+            console.log("Adulto");
+        } else {
+            console.log("Jubilado");
+        }
+
+        let nota = 8.5;
+
+        if (nota < 5) {
+            console.log("Suspenso");
+        } else if (nota >= 5 && nota < 7) {
+            console.log("Suficiente");
+        } else if (nota >= 7 && nota < 9) {
+            console.log("Notable");
+        } else if (nota >= 9 && nota <= 10) {
+            console.log("Sobresaliente");
+        } else {
+            console.log("Nota no válida");
+        }
+
+    </script>
+</body>
+</html>

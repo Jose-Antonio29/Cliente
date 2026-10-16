@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet" type="text/css" />
+    <title>Cálculos con el radio</title>
+</head>
+<body>
+    <h1>Cálculos de una circunferencia</h1>
+    <div class="caja" id="contenido"></div>
+    <script>
+        let modContenido = document.getElementById("contenido");
+        
+        // Pedimos el radio al usuario mediante prompt
+        let radio = Number(prompt("Introduce el radio de la circunferencia: "));
+        
+        // Comprobamos si el usuario ha introducido un número válido
+        if (!isNaN(radio) && radio > 0) {
+            // Hacemos los cálculos del perímetro, área y volumen de la circunferencia
+            const perimetro = 2*Math.PI*radio;
+            const area = Math.PI*Math.pow(radio, 2);
+            const volumen = (4/3)*Math.PI*Math.pow(radio, 3);
+
+            // Mostramos los resultados por pantalla
+            modContenido.innerHTML=`<p><strong>Radio introducido: </strong>${radio.toFixed(2)}</p>
+                          <p><strong>Perímetro de la circunferencia: </strong>${perimetro.toFixed(2)}</p>
+                          <p><strong>Área de la circunferencia: </strong>${area.toFixed(2)}</p>
+                          <p><strong>Volumen de la circunferencia: </strong>${volumen.toFixed(2)}</p>`;
+        } else {
+            // Si no ha introducido un número válido mostramos un mensaje en la página
+            modContenido.innerHTML="<p class='error'>Error. No has introducido un número válido</p>"
+        }
+    </script>
+</body>
+</html>

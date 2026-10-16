@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación</title>
+</head>
+<body>
+    <h1>Comparación entre innerHTML, innerText y textContent</h1>
+    <div id="contenido">
+        <strong>Texto visible</strong>
+        <span style="display: none;">Texto oculto</span>
+    </div>
+    <p>Abre la consola del navegador para comparar los métodos.</p>
+    <script>
+        // Recuperamos el elemento del DOM
+        let elemento = document.getElementById("contenido");
+
+        // innerHTML devuelve el contenido HTML
+        console.log("=== innerHTML ===");
+        console.log(elemento.innerHTML);
+
+        // innerText devuelve únicamente el texto visible
+        console.log("=== innerText ===");
+        console.log(elemento.innerText);
+
+        // textContent devuelve todo el contenido de texto, incluyendo el texto oculto mediante CSS
+        console.log("=== textContent ===");
+        console.log(elemento.textContent);
+    </script>
+</body>
+</html>

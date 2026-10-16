@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desglose en billetes y monedas</title>
+</head>
+<body>
+    <h1>Desglose en billetes y monedas</h1>
+    <p id="cant"></p>
+    <div id="desglose"></div>
+
+    <script>
+        cantidad = prompt("Introduce una cantidad entera de euros: ");
+
+        if(isNaN(cantidad) || cantidad == "" || cantidad == null) {
+            alert("Debes introducir un número entero")
+        } else {
+            cant = Number(cantidad);
+            document.getElementById("cant").textContent=`Cantidad introducida: ${cant}`;
+            let res = "<h3>Desglose:</h3><ul>";
+            
+            let conta;
+
+            let num200 =  parseInt(cant/200);
+            if (num200>0) {
+                res+=`<li> ${num200} x 200 €</li>`;
+                cant= cant%200;
+            }
+            
+            let num100 = parseInt(cant/100);
+            if (num100>0) {
+                res+=`<li> ${num100} x 100 €</li>`;
+                cant= cant%100;
+            }
+
+            let num50 = parseInt(cant/50);
+            if(num50>0) {
+                res+=`<li> ${num50} x 50 €</li>`;
+                cant= cant%50;
+            }
+
+            let num20 = parseInt(cant/20);
+            if(num20>0) {
+                res+=`<li> ${num20} x 20 €</li>`;
+                cant= cant%20;
+            }
+            
+            let num10 = parseInt(cant/10);
+            if(num10>0) {
+                res+=`<li> ${num10} x 10 €</li>`;
+                cant= cant%10;
+            }
+
+            let num5 = parseInt(cant/5);
+            if(num5>0) {
+                res+=`<li> ${num5} x 5 €</li>`;
+                cant= cant%5;
+            }
+
+            let num2 = parseInt(cant/2);
+            if(num2>0) {
+                res+=`<li> ${num2} x 2 €</li>`;
+                cant= cant%2;
+            }
+
+            let num1 = parseInt(cant/1);
+            if(num1>0) {
+                res+=`<li> ${num1} x 1 €</li>`;
+            }
+
+            res+="</ul>";
+            console.log(res);
+
+            document.getElementById("desglose").innerHTML=res;
+        }
+    </script>
+</body>
+</html>

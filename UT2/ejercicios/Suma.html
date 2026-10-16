@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma</title>
+</head>
+<body>
+    <script>
+        // Pedimos los valores
+        let num1 = prompt("Dime un número: ");
+        let num2 = prompt("Dime otro: ");
+
+        let mensaje;
+
+        // Comprobamos si se ha cancelado la introducción del valor
+        if (num1 === null || num2 === null) {
+                // El usuario pulsa cancelar
+                mensaje = "Operación cancelada por el usuario";
+        } else {
+            // Convertimos a número entero
+            const x = parseFloat(num1);
+            const y = parseFloat(num2);
+            
+            if (isNaN(x) || isNaN(y)) {
+                // Caso cadena no númerica
+                mensaje = "No has introducido valores válidos";
+            } else {
+                // Caso correcto -> Mostramos por por pantalla la suma
+               const z = x + y;
+               mensaje = `El resultado de sumar ${x} e ${y} es ${z}\nGracias por usar este programa`;
+            }
+        }
+        alert(mensaje);
+    </script>
+</body>
+</html>

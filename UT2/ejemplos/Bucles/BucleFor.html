@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle For</title>
+</head>
+<body>
+    <h1>Prueba de bucle for</h1>
+    <p>Abre la consola para ver los resultados</p>
+
+    <script>
+        // Contar del 1 al 5
+        for (let i = 1; i <= 5; i++) {
+            console.log("Número: ",i);
+        }
+
+        // Contar del 5 al 1
+        for (let i = 5; i >= 1; i--) {
+            console.log("Número: ",i);
+        }
+
+        // Tabla de multiplicar del 5
+        for (let i = 1; i <= 10; i++) {
+            console.log("5 X ",i," = ",(i*5));
+        }
+
+        // Sumar los 100 primeros números
+        let suma=0;
+        for (let i = 1; i <= 100; i++) {
+            suma+=i;
+        }
+        console.log("Suma: ",suma);
+    </script>
+</body>
+</html>

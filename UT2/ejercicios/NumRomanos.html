@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de años a números romanos</title>
+</head>
+<body>
+    <h1>Conversor de años a números romanos</h1>
+    <div id="anio"></div>
+
+    <script>
+        anno = prompt("Introduce un año (entero positivo): ");
+
+        if(isNaN(anno) || anno == "" || anno == null || anno < 1) {
+            alert("Debes introducir un número entero positivo")
+        } else {
+            cant = Number(anno);
+            
+            let res = `<h3>El año ${cant} en números romanos es: `;
+
+           while (cant>=1000) {res+='M'; cant -= 1000};
+           while (cant>=900) {res+='CM'; cant -= 900};
+           while (cant>=500) {res+='D'; cant -= 500};
+           while (cant>=400) {res+='CD'; cant -= 400};
+           while (cant>=100) {res+='C'; cant -= 100};
+           while (cant>=90) {res+='XC'; cant -= 90};
+           while (cant>=50) {res+='L'; cant -= 50};
+           while (cant>=40) {res+='XL'; cant -= 40};
+           while (cant>=10) {res+='X'; cant -= 10};
+           while (cant>=9) {res+='IX'; cant -= 9};
+           while (cant>=5) {res+='V'; cant -= 5};
+           while (cant>=4) {res+='IV'; cant -= 4};
+           while (cant>=1) {res+='I'; cant -= 1}; 
+
+            res+="</h3>";
+            console.log(res);
+
+            document.getElementById("anio").innerHTML=res;
+        }
+    </script>
+</body>
+</html>

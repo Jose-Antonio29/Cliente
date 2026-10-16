@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="estilos.css" rel="stylesheet" type="text/css" />
+    <title>Contar dígitos</title>
+  </head>
+  <body>
+    <h1>Contar dígitos</h1>
+    <div class="caja" id="contenido"></div>
+    <script>
+      let modContenido = document.getElementById("contenido");
+
+      // Pedimos un número entero al usuario
+      let num = parseInt(prompt("Introduce un número entero: "));
+
+      // Comprobamos si el valor introducido es válido
+      if (!isNaN(num)) {
+        // Guardamos el valor absoluto del número y cálculamos el número de dígitos que tiene
+        let absoluto = Math.abs(num);
+        let digitos = 0;
+
+        // Caso especial: si el número es 0
+        if (num === 0) {
+          digitos = 1;
+        } else {
+          while (absoluto >= 1) {
+            absoluto = Math.floor(absoluto / 10);
+            digitos++;
+          }
+        }
+
+        // Mostramos el número introducido y el número de dígitos que tiene el número introducido
+        modContenido.innerHTML = `<p><strong>Número introducido: </strong>${num}</p>
+                                    <p><strong>Cantidad de dígitos: </strong>${digitos}</p>`;
+      } else {
+        // Si el valor introducido no es válido mostramos un mensaje de error
+        modContenido.innerHTML =
+          "<p class='error'>Error. El valor introducido no es válido</p>";
+      }
+    </script>
+  </body>
+</html>

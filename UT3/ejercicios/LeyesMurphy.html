@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="estilos.css" rel="stylesheet" type="text/css" />
+    <title>Leyes de Murphy</title>
+  </head>
+  <body>
+    <h1>Leyes de Murphy</h1>
+    <div class="caja" id="contenido"></div>
+
+    <script>
+      // Array con varias leyes de Murphy
+      let leyes = [
+        "Si algo puede salir mal, saldrá mal",
+        "Nada es tan fácil como parece.",
+        "Cualquier solución entraña nuevos problemas.",
+        "Siempre estás en la cola más lenta",
+        "Siempre hay un problema para cada solución.",
+        "No importa cuántas veces se demuestre una mentira, siempre quedará un porcentaje de personas que creerá que es verdad",
+        "No siempre se encuentra lo que se está buscando.",
+        "Si eres capaz de distinguir entre un buen y mal consejo, entonces no necesitas consejos.",
+        "Cuando las cosas se dejan a su aire, suelen ir de mal en peor.",
+      ];
+
+      // Generamos un número aleatorio entre 0 y (leyes.length - 1)
+      const randomIndice = Math.floor(Math.random() * leyes.length);
+
+      // Mostramos la frase en el indice indicado
+      document.getElementById("contenido").innerHTML =
+        `<h4>${leyes[randomIndice]}</h4>`;
+    </script>
+  </body>
+</html>

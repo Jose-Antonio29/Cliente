@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirámide</title>
+</head>
+<body>
+    <h1>Pirámide</h1>
+    <pre id="asteriscos"></pre>
+    
+    
+    <script>
+        let alt = Number(prompt("Dime la altura de la pirámide (>0): "));
+        
+        if (isNaN(alt) || alt <=0) {
+            document.getElementById("asteriscos").textContent="Altura no válida";
+        } else {
+            const ALTURA = parseInt(alt);
+            for (let i = 1; i <= ALTURA; i++) {
+                let fila="";
+
+                // Añadimos los espacios en blanco
+                let blancos = ALTURA - i;
+                for (let j = 1; j <= blancos; j++ ) {
+                    fila+=" ";
+                }
+
+                // Añadimos los asteriscos
+                let asteriscos = 2*i-1;
+                for (let k = 1; k<=asteriscos; k++) {
+                    fila+="*";
+                }
+                fila+="\n"
+
+                // Mostramos la fila completa
+                document.getElementById("asteriscos").textContent+=fila;
+            }
+        }
+    </script>
+</body>
+</html>

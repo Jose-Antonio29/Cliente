@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prueba con swtich</h1>
+    <p>Abre la consola para ver los resultados</p>
+
+    <script>
+        let nota = "A";
+
+        switch(nota) {
+            case "A":
+            case "B":
+                console.log("Muy bien");
+                break;
+            case "C":
+                console.log("Bien");
+                break;
+            case "D":
+                console.log("Insuficiente");
+                break;
+            default:
+                console.log("Nota no válida");
+        }
+
+        let dia = 3;
+        let nombreDia;
+
+        switch(dia) {
+            case 1:
+                nombreDia = "Lunes";
+                break;
+            case 2:
+                nombreDia = "Martes";
+                break;
+            case 3:
+                nombreDia = "Miércoles";
+                break;
+            case 4:
+                nombreDia = "Jueves";
+                break;
+            case 5:
+                nombreDia = "Viernes";
+                break;
+            case 6:
+                nombreDia = "Sábado";
+                break;
+            case 7:
+                nombreDia = "Domingo";
+                break;
+            default:
+                nombreDia = "Fin de semana";
+        }
+
+        console.log("Hoy es ",nombreDia);
+    </script>
+</body>
+</html>

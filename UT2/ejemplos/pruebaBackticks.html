@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Prueba de cálculo en texto con comillas dobles:</h2>
+    <p id="calc1"></p>
+    <h2>Prueba de cálculo en texto con backticks</h2>
+    <p id="calc2"></p>
+
+    <script>
+        let x = 5;
+        let y = 6;
+        document.getElementById("calc1").textContent = "${x} más ${y} es: ${x+y}";
+        document.getElementById("calc2").textContent = `${x} más ${y} es: ${x+y}`;
+    </script>
+</body>
+</html>

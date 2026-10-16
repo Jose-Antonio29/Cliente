@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba de Date</title>
+  </head>
+  <body>
+    <script>
+      let hoy = new Date();
+      console.log(hoy.toDateString());
+      let navidad = new Date("2025-12-15");
+      console.log(navidad.toDateString());
+      let cumple = new Date(2025, 9, 23);
+      console.log(
+        `Hoy es ${cumple.getDate()}/${cumple.getMonth() + 1}/${cumple.getFullYear()}`,
+      );
+      console.log(cumple.toDateString());
+      console.log(cumple.toLocaleDateString());
+
+      console.log(
+        hoy.toLocaleDateString("es-ES", {
+          weekday: "long",
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        }),
+      );
+
+      let newFecha = new Date("2025-02-29");
+      console.log(newFecha.toDateString());
+    </script>
+  </body>
+</html>

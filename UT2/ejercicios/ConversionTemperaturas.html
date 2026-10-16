@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+</head>
+<body>
+    <h1>Conversor de temperaturas</h1>
+
+    <script>
+        let opcion = prompt("Elige una opción: \n--> 1. Convertir de Celsius a Fahrenheit\n--> 2. Convertir de Fahrenheit a Celsius");
+        let valor;
+        
+        if (opcion == null) {
+            alert("Operación cancelada por el usuario");
+        } else if(opcion != 1 && opcion != 2) {
+            alert("Operación no válida");
+        } else {
+            valor = parseFloat(prompt("Introduzca la temperatura que quiere convertir: "));
+            if(isNaN(valor)) {
+                alert("Valor no válido");
+            } else {
+                if (opcion == 1) { 
+                        alert(`${valor}ºC son ${((valor/9)*5)+32}ºF`);
+                } else if (opcion == 2) {
+                    alert(`${valor}ºF son ${(valor-32)*5/9}ºC`);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
