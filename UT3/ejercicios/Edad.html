@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="estilos.css" rel="stylesheet" type="text/css" />
+    <title>Edad</title>
+  </head>
+  <body>
+    <h1>Fecha de nacimiento</h1>
+    <div class="caja" id="contenido"></div>
+
+    <script>
+      let modContenido = document.getElementById("contenido");
+
+      // Pedimos al usuario su fecha de nacimiento
+      const entrada = prompt(
+        "Introduce tu fecha de nacimiento (formato AAAA-MM-DD): ",
+      );
+
+      // Comprobamos si el usuario no ha dejado el campo vacío o ha cancelado
+      if (entrada.trim() === "" || entrada === null) {
+        // Mostramos un mensaje de error señalando que la operación ha sido cancelada
+        modContenido.innerHTML =
+          "<p  class='error'>Error. No has introducido ninguna fecha</p> ";
+      } else {
+        // Dividimos el texto en partes para recoger el año, mes y día
+        const partes = entrada.split("-");
+        const año = parseInt(partes[0]);
+        const mes = parseInt(partes[1]);
+        const dia = parseInt(partes[2]);
+
+        // Creamos una fecha con las partes recogidas
+        const fechaNac = new Date(año, mes - 1, dia);
+
+        // Comprobamos si la fecha es válida
+        if (
+          fechaNac.getFullYear() === año &&
+          fechaNac.getMonth() === mes - 1 &&
+          fechaNac.getDate() === dia
+        ) {
+          // Calculamos la edad del usuario
+          const fechaActual = new Date();
+          let edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+
+          if (fechaActual.getDate() === fechaNac.getDate() && fechaActual.getMonth() > fechaNac.getMonth()) {
+            edad++;
+          } else if (fechaActual.getMonth() === fechaNac.getMonth()) {
+            if (fechaActual.getDate() > fechaNa.getDate()) {
+              edad++;
+            }
+          }
+
+          // Mostramos la fecha de  nacimiento introducida y la edad actual del usuario en años
+          let fechaNacTexto = fechaNac.toLocaleDateString("es-ES", {weekday:"long", day:"2-digit", month:"long", year:"numeric"});
+          modContenido.innerHTML=`<p><strong>Fecha de nacimiento: </strong>${fechaNacTexto}</p>
+                                  <p><strong>Edad actual: </strong>${edad} años</p>`;
+        } else {
+          // Si no es válida mostramos un mensaje de error
+          modContenido.innerHTML =
+            "<p class='error'>Error. La fecha no es válida</p>";
+        }
+      }
+    </script>
+  </body>
+</html>

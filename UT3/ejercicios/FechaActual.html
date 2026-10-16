@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <title>Fecha actual</title>
+</head>
+<body>
+    <h1>Fecha Actual</h1>
+    <div class="caja" id="contenido"></div>
+
+    <script>
+        let modContenido = document.getElementById("contenido");
+
+        // Guardamos la fecha actual
+        let fechaActual = new Date();
+
+        // Recolectamos los datos de la fecha
+        let fechaCompleta = fechaActual.toLocaleDateString();
+        let año = fechaActual.toLocaleDateString("es-ES", {year:"2-digit"});
+        let mes = fechaActual.toLocaleDateString("es-ES", {month:"long"});
+        let dia = fechaActual.toLocaleDateString("es-ES", {day:"numeric"});
+        let diaSemana = fechaActual.toLocaleDateString("es-ES", {weekday:"long"});
+
+        // Mostramos los datos por pantalla
+        modContenido.innerHTML=`<p><strong>Fecha actual: </strong>${fechaCompleta}</p>
+                                <p><strong>Año: </strong>${año}</p>
+                                <p><strong>Mes: </strong>${mes}</p>
+                                <p><strong>Día: </strong>${dia}</p>
+                                <p><strong>Día de la semana: </strong>${diaSemana}</p>`
+    </script>
+</body>
+</html>
