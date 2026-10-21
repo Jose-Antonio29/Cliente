@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <title>Fecha actual</title>
+</head>
+<body>
+    <script>
+        try {
+            // 1. Pedimos al usuario un número
+            let entrada = prompt("Introduce un número positivo: ");
+
+            // 2. Comprobamos si ha cancelado o dejado vacío
+            if (entrada === null || entrada.trim() == "") {
+                throw new Error("No has introducido ningún valor.")
+
+            } else {
+                // 3. Convertimos a número
+                const numero = parseFloat(entrada);
+
+                // 4. Validamos si es númerico
+                if (isNaN(numero)) {
+                    throw new Error("El valor introducido no es un número");
+                } 
+                
+                // 5. Validamos si es negativo
+                if (numero < 0) {
+                    throw new Error("El número no puede ser negativo")
+                }
+
+                // 6. Si todo está correcto, mostramos la raíz cuadrada
+                const raiz = Math.sqrt(numero);
+                alert(`La raíz cuadrada de ${numero} es ${raiz}`);
+            }
+        // 7. Capturamos y mostramos el error
+        } catch(error) {
+            alert("Error: " + error.message);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <title>Fecha actual</title>
+</head>
+<body>
+    <h1>Lista de palabras</h1>
+    <div class="caja" id="resultado"></div>
+    <script>
+        const frase = prompt("Introduce una frase: ");
+
+        // Obtenemos el elemento donde mostraremos el resultado.
+        const contenedor = document.getElementById("resultado");
+
+        // Comprobamos si el usuario ha cancelado o no ha escrito nada
+        if (frase === null || frase.trim() === "") {
+            contenedor.innerHTML = "<p class='error'>No has introducido ninguna frase</p>"
+        } else {
+            // Dividir la frase en palabras (usando expresión regular para )
+            const palabras = frase.trim().split(/\s+/);
+            const cantidad = palabras.length;
+
+            // Crear lista HTML
+            let listaHTML = "<ul>";
+            for (let i = 0; i < palabras.length; i++) {
+                listaHTML += `<li>${palabras[i]}</li>`; 
+            }
+            listaHTML += "</ul>";
+
+            // Mostrar resultados
+            contenedor.innerHTML = `<p><strong>Frase original:</strong><br>${frase}</p>
+                                    <p><strong>Número de palabras: </strong>${cantidad}</p>
+                                    <p><strong>Lista de palabras:</strong><br>${listaHTML}</p>`
+        }
+    </script>
+</body>
+</html>
