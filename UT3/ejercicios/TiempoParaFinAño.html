@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>tiempo restante hasta fin de año</title>
+</head>
+<body>
+     
+    <div class="caja" id="resultado">
+        
+    </div>
+    <script>
+        //obtenemos la fecha actual
+        const ahora=new Date();
+        //año actual
+        const añoActual=ahora.getFullYear();
+        console.log(ahora)
+        console.log(añoActual)
+        //creamos la fecha del 31 de diciembre 
+        const finAño=new Date(añoActual,11,31,23,59,59);    //mes 11=diciembre
+        console.log(finAño)
+        //calculamos la diferencia en milisegundos
+        const diferenciaMS=finAño-ahora;;
+        console.log(diferenciaMS)
+        //convertimos milisegundos a dias horas y minutos
+        let msMinuto=1000*60;
+        let msHora=msMinuto*60;
+        let msDia=msHora*24;
+
+        ///
+        let dias=Math.floor(diferenciaMS/msDia)
+        let horas=Math.floor((diferenciaMS%msDia)/msHora)
+        let minutos=Math.floor((diferenciaMS%msHora)/msMinuto)
+        //Mostramos el resultado
+        const contenedor=document.getElementById("resultado")
+       contenedor.innerHTML=`<p><strong>Fecha actual:</strong> ${ahora.toLocaleDateString("es-ES")}</p>
+       <p><strong>Fin de año:</strong> ${finAño.toLocaleDateString("es-ES")}</p>
+       <hr>
+       <p><strong>Para que finalice el año:</strong> ${añoActual}</p>
+       <p><strong>${dias}</strong> días, <strong>${horas}</strong> horas y <strong>${minutos}</strong> minutos </p>
+       `
+    </script>
+</body>
+</html>

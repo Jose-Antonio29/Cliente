@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo regExp</title>
+</head>
+<body>
+    <script>
+        let mensaje=prompt("Introduce tu numero de telefono");
+        if(mensaje===null ||mensaje.trim()===""){
+            alert("Has cancelado o no introducido nada por teclado")
+        }else{
+            let patron=/^[6-9]\d{2} \d{3} \d{3}$/;
+            if(patron.test(mensaje)==true){
+                alert("Teléfono correcto "+mensaje)
+            }else{
+                alert("Este formato "+mensaje+" de teléfono no es válido")
+            }
+        }
+    </script>
+    
+</body>

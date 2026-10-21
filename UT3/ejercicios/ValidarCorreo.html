@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio9</title>
+</head>
+<body>
+    <link rel="stylesheet" href="estilos.css">
+    <h1>Correo</h1>
+    <div>
+        <h3 id="sol"></h3>
+        <h3 class="error" id="jj"></h3>
+    </div>
+    <script>
+        let mensaje=prompt("Introduce tu correo del C.E.S Vega media (ejemplo: usuario@ces-vegamedia.es)");
+        //expresion regular: solo se acepta eñl dominio ces-vegamdia.es
+        let patron= /^[\w.-]+@ces-vegamedia\.es$/
+        if(mensaje===null ||mensaje.trim()===""){
+            alert("No has introducido ningún correo electrónico")
+        }else if(patron.test(mensaje)){
+            alert("Correo institucional válido (C.E.S Vega media)")
+        }else{
+            alert("Correo no válido")
+        }
+    </script>
+</body>
+</html>
