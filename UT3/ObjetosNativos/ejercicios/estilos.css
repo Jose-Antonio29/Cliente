@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;             /* Tipografía arial o sans-serif para todo el documento */
+    background-color: #e7e7e7;                  /* Establecemos un color de fondo gris muy claro */
+    margin: 40px;                               /* Añadimos un margen de 40px alrededor del body */
+    text-align: center;                         /* Centramos horizontalmente el texto de todos los elementos dentro del body */
+}
+
+p {
+    margin: 8px 0;                              /* Margen vertical de 8px entre párrafos */
+}
+
+/* CAJA */
+.caja {
+    background-color: white;                    /* Fondo blanco para resaltar la caja de resultados */
+    padding: 15px;                              /* Padding (espacio interior) de 15px en todos los lados */
+    border-radius: 12px;                        /* Bordes de la caja redondeados 12px */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);   /* Sombra sutil para dar efecto de profundidad a la caja*/
+    max-width: 350px;                           /* Establecemos un ancho máximo de la caja */
+    margin: 20px auto;                          /* Margen superior e inferior de 20px, margen izquierdo y derecho auto, 
+                                                   es decir, la caja estará centrada horizontalmente */
+    text-align: left;                           /* Alinea el contenido interno de la caja (párrafos) a la izquierda */
+}
+
+/* ERROR */
+.error {                                        /* Mensaje de error en color rojo y negrita */
+    color: red;                   
+    font-weight: bold; 
+    text-align: center;  
+}

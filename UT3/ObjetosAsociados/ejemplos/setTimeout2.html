@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../estilos.css" rel="stylesheet" type="text/css">
+    <title>setTimeout 1</title>
+</head>
+<body>
+    <h1>Ejemplo 2 de setTimeout</h1>
+    <p id="mensaje">Esperando mensaje...</p>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById("mensaje").textContent = "⏰ ¡Han pasado 3 segundos!";
+        }
+        // Esperar 3 segundos antes de mostrar el mensaje
+        setTimeout(mostrarMensaje, 3000);
+    </script>
+</body>
+</html>

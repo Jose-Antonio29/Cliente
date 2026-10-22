@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../estilos.css" rel="stylesheet" type="text/css" />
+    <style>
+        p {font-size: 35px; color: red;}
+        .dispositivo {height: 300px; display: flex; justify-content: center; align-items: center;}
+        .dispositivo > img {max-width: 100%; max-height: 280px; transition: opacity 0.3s ease;}
+    </style>
+    <title>Detección del tamaño de ventana</title>
+</head>
+<body>
+    <h1>Tamaño actual de la ventana</h1>
+    <p id="tamanio"></p>
+    <div class="dispositivo">
+        <img id="image" src="">
+    </div>
+
+    <script>
+        function mostrarTam() {
+            let tam = window.innerWidth;
+            let mensaje = "";
+            let nuevaImgSrc = "";
+            let nuevoAltText = "";
+
+            if (tam < 576) {
+                mensaje = "XS";
+                nuevaImgSrc = "../images/movilV.png";
+                nuevoAltText = "Smartphone (XS)";
+            } else if (tam >= 576 && tam < 768) {
+                mensaje = "SM";
+                nuevaImgSrc = "../images/movilH.png";
+                nuevoAltText = "Smartphone horizontal (SM)";
+            } else if (tam >= 768 && tam < 992) {
+                mensaje = "MD";
+                nuevaImgSrc = "../images/tablet.png";
+                nuevoAltText = "Tablet horizontal (MD)";
+            } else if (tam >= 992 && tam < 1200) {
+                mensaje = "LG";
+                nuevaImgSrc = "../images/portatil.png";
+                nuevoAltText = "Chromebook (LG)";
+            } else if (tam >= 1200 && tam < 1400) {
+                mensaje = "XL";
+                nuevaImgSrc = "../images/monitor.png";
+                nuevoAltText = "Monitor de escritorio (XL)";
+            } else {
+                mensaje = "XXL";
+                nuevaImgSrc = "../images/monitor.png";
+                nuevoAltText = "Monitor de escritorio (XL)";
+            }
+
+            document.getElementById("tamanio").textContent = mensaje;
+            document.getElementById("image").src = nuevaImgSrc;
+            document.getElementById("image").alt = nuevoAltText;
+
+        }
+
+        mostrarTam();
+        window.onresize = mostrarTam;
+    </script>
+</body>
+</html>

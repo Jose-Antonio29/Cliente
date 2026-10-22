@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: Arial, sans-serif; text-align: center; margin-top: 50px;}
+        #contador {font-size: 3em; font-weight: bold; margin-top: 10px; color: #F55C21}
+    </style>
+    <title>setInterval 2</title>
+</head>
+<body>
+    <h2>Ejemplo de setInterval()</h2>
+    <p>El contador aumenta cada segundo</p>
+    <div id="contador">0</div>
+
+    <script>
+        let numero = 0;
+        
+        // Repetir cada 1 segundo (1000 milisegundos)
+        setInterval(function() {
+            numero++;
+            document.getElementById("contador").textContent = numero;
+        }, 1000)
+    </script>
+</body>
+</html>

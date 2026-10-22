@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos.css" rel="stylesheet" type="text/css" />
+    <title>Ancho y Alto</title>
+</head>
+<body>
+    <h1>Ancho y alto de la pantalla</h1>
+    <div class="caja">
+        <div id="ancho"></div>
+        <div id="alto"></div>
+    </div>
+
+    <script>
+        function mostrarTam() {
+            document.getElementById("ancho").innerHTML=`<p><strong>Ancho:</strong> ${innerWidth}</p>`;
+            document.getElementById("alto").innerHTML=`<p><strong>Alto:</strong> ${innerHeight}</p>`;
+        }
+
+        mostrarTam();
+        window.onresize = mostrarTam;
+    </script>
+</body>
+</html>

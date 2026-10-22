@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: Arial, sans-serif; text-align: center; margin-top: 50px;}
+        #contador {font-size: 3.5em; font-weight: bold; margin-top: 10px; color: #F55C21;}
+        #mensaje {font-size: 1.4em; font-weight: bold; color: green;} 
+    </style>
+    <title>Cuenta atrás</title>
+</head>
+<body>
+    <h1>Cuenta atrás</h1>
+    <div id="contador">10</div>
+    <div id="mensaje"></div>
+
+    <script>
+        // Valor incial y variables globales
+        let contador = 10;
+        let elementoContador = document.getElementById("contador");
+        let mensaje = document.getElementById("mensaje");
+
+        // Creamos el intervalo que se ejecuta cada segundo
+        let id = setInterval(function() {
+            contador--;
+            elementoContador.textContent = contador;
+
+            // Cuando llega a 0, detenemos el intervalo
+            if (contador === 0) {
+                clearInterval(id);
+                mensaje.textContent = "🎉 ¡Cuenta atrás finalizada"
+            }
+        }, 1000)
+    </script>
+</body>
+</html>
