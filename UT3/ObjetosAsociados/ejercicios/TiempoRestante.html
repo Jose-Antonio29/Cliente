@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos.css" type="text/css">
+    <title>Tiempo restante hasta fin de año</title>
+</head>
+<body>
+    <h2>Tiempo restante hasta fin de año</h2>
+        <div class="caja" id="resultado">
+            <p id="fecha"></p>
+            <p id="finAnio"></p>
+            <hr>
+            <p>Para que finalice el año 2026, faltan:</p>
+            <p id="tiempRest"></p>
+        </div>
+        
+    </div>
+    <script>
+                
+        function mostrarFechaHora() {
+            // Obtenemos la fechaactual
+            const fecha = new Date();
+
+            // Fecha y hora en formato local
+            document.getElementById("fecha").innerHTML=`<strong>Fecha actual:</strong> ${fecha.toLocaleDateString()}, ${fecha.toLocaleTimeString()}`;
+    
+            // Año actual
+            const añoActual=fecha.getFullYear();
+
+            // Creamos la fecha del 31 de diciembre 
+            const finAño=new Date(añoActual,11,31,23,59,59);    //mes 11=diciembre
+            console.log(finAño)
+
+            document.getElementById("finAnio").innerHTML=`<strong>Fin de año: </strong> ${finAño.toLocaleDateString()}, ${finAño.toLocaleTimeString()}`
+            
+            // Calculamos la diferencia en milisegundos
+            const diferenciaMS=finAño-fecha;;
+            console.log(diferenciaMS)
+            
+            // Convertimos milisegundos a dias horas y minutos
+            let msSegundo = 1000;
+            let msMinuto=msSegundo*60;
+            let msHora=msMinuto*60;
+            let msDia=msHora*24;
+    
+            // Calculamos el timepo restante
+            let dias=Math.floor(diferenciaMS/msDia)
+            let horas=Math.floor((diferenciaMS%msDia)/msHora)
+            let minutos=Math.floor((diferenciaMS%msHora)/msMinuto)
+            let segundos=Math.floor((diferenciaMS % msMinuto) / msSegundo);
+            
+            // Mostramos el resultado
+            document.getElementById("tiempRest").innerHTML = `<strong>${dias}</strong> días, 
+                                                            <strong>${horas}</strong> horas, 
+                                                            <strong>${minutos}</strong> minutos y 
+                                                            <strong>${segundos}</strong> segundos`;
+        }
+
+        // Mostramos la hora nada más cargar la página
+        mostrarFechaHora();
+
+        // Actualizamos la hora cada segundo
+        setInterval(mostrarFechaHora, 1000);
+
+
+        
+        
+     
+
+    </script>
+</body>
+</html>

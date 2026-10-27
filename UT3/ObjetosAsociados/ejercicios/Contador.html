@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: Arial, sans-serif; text-align: cetner; margin-top: 50px;}
+        #contador {font-size: 48px;}
+        button {margin: 10px; padding: 10px 20px; font-size: 16px; border-radius: 8px; border: none; cursor: pointer;}
+        #detener {background-color: #d00;}
+        #continuar {background-color: #09bb09;}
+    </style>
+    <title>Contador</title>
+</head>
+<body>
+    <h2>Temporizador</h2>
+    <p id="contador"></p>
+
+    <button id="continuar" onclick="continuar()">Continuar</button>
+    <button id="detener" onclick="detener()">Detener</button>
+
+    <script>
+        let segundos = 0;               // Variable que guarda el número de segundos
+        let intervalo;                  // Variable para almacenar el identificador del intervalo
+
+        // Función que incrementa el contador y lo muestra
+        function aumentarContador() {
+            segundos++;
+            document.getElementById("contador").innerText = segundos;
+        }
+
+        // Iniciamos
+    </script>
+</body>
+</html>

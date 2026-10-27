@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Fondo claro y suave, centrado con Flexbox */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85vh;
+            /* Tono crema/gris perlado, muy relajante y neutro */
+            background-color: #F5F3ED; 
+            font-family: Roboto, Arial, sans-serif;
+        }
+
+        /* Contenedor del reloj estilo tarjeta minimalista */
+        .reloj-contenedor {
+            text-align: center;
+            background-color: #F5F3ED; /* Tarjeta blanca pura */
+            padding: 50px 70px;
+        }
+
+        /* Estilos del título */
+        .reloj-contenedor h2 {
+            margin: 0 0 15px 0;
+            font-size: 21px;
+            color: #9A948F; /* Gris cálido claro para no distraer */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        /* Estilos de la hora (Elegante y fácil de leer) */
+        #hora {
+            font-size: 80px;
+            font-weight: 700;
+            color: #3B3836; /* Un gris muy oscuro (casi negro) para un contraste cómodo */
+            font-family: Courier, monospace; 
+            letter-spacing: 1px;
+        }
+
+        /* Ajuste para pantallas pequeñas (móviles) */
+        @media (max-width: 600px) {
+            #hora {
+                font-size: 45px;
+            }
+            .reloj-contenedor {
+                padding: 30px 40px;
+            }
+        }
+    </style>
+    <title>Reloj Digital</title>
+</head>
+<body>
+    <div class="reloj-contenedor">
+        <h2>Reloj Digital</h2>
+        <div id="hora"></div>
+    </div>
+
+    <script>
+    
+        function mostrarFechaHora() {
+            // Obtenemos la fecha actual
+            const fecha = new Date();
+
+            // Hora en formato local
+            document.getElementById("hora").textContent=fecha.toLocaleTimeString();
+        }
+
+        // Mostramos la hora nada más cargar la página
+        mostrarFechaHora();
+
+        // Actualizamos la hora cada segundo
+        setInterval(mostrarFechaHora, 1000);
+
+    </script>
+</body>
+</html>
