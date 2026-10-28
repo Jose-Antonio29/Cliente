@@ -4,16 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../estilos.css" rel="stylesheet" type="text/css">
-    <title>Información</title>
+    <style>
+        .buttons button {
+            border-radius: 7px;
+            padding: 5px 20px;
+        }
+
+        .buttons button:hover {
+            background-color: aqua;
+        }
+
+    </style>
+    <title>Ejercicio Objetos del Navegador</title>
 </head>
 <body>
-    <h2>Información</h2>
+    <h1>Ejercicio: Objetos del Navegador</h1>
     <div class="caja">
-        <p id="idioma"></p>
-        <p id="ancho"></p>
-        <p id="alto"></p>
-        <button onclick="location.assign('google.com')"></button>
-        <button onclick="location.reload()"></button>
+        <p id="info"></p>
     </div>
+    <div class="buttons">
+        <button onclick="location.reload()">Recargar</button>
+        <button onclick="location.assign('https://www.google.com')">Ir a Google</button>
+    </div>
+
+    <script>
+        alert("¡Bienvenido a la página!");
+
+        document.title = "Título cambiado";
+        document.getElementById("info").innerHTML = `<strong>Idioma del navegador: </strong>${navigator.language}<br>
+                                                     <strong>¿Conectado a internet? </strong>${navigator.onLine ? "Sí" : "No"}<br>
+                                                     <strong>Ancho de página: </strong>${window.innerWidth}px<br>
+                                                     <strong>Alto de página: </strong>${window.innerHeight}px`;
+    </script>
 </body>
 </html>
