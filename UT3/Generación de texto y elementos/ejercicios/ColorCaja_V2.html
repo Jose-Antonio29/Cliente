@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="estiloCaja.css">
+    <style>
+        #caja {
+            width: 300px;
+        }
+    </style>
+    <title>Cambiar el color de la caja</title>
+</head>
+<body>
+    <div id="caja"></div>
+    <button onclick="cambiarColor()">Cambiar color</button>
+
+    <script>
+        function generarColorAleatorio() {
+            let colores = ['red', 'green', 'blue', 'yellow', 'white', 'black', 'grey', 'pink', 'magenta', 'lightblue', 'brown'];
+            // Elige aleatoriamente un color
+            return colores[Math.floor(Math.random()*colores.length)];
+        }
+
+        function cambiarColor() {
+            document.getElementById("caja").style.backgroundColor = generarColorAleatorio();
+        }
+    </script>
+</body>
+</html>

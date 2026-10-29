@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Generar elementos</title>
+</head>
+<body>
+    <h1 id="titulo">Título normal</h1>
+    <p id="parrafo">Esto es un párrafo inicial.</p>
+    <button onclick="crearParrafo()">Añadir párrafo</button>
+    <button onclick="cambiarColores()">Cambiar estilos</button>
+
+    <script>
+        document.getElementById("titulo").textContent = "Título cambiado con JavaScript";
+
+        function crearParrafo() {
+            let parrafo = document.createElement("p");
+            parrafo.textContent = "Este párrafo fue creado dinámicamente.";
+            document.body.appendChild(parrafo);
+        }
+
+        function cambiarColores() {
+            document.body.style.backgroundColor = "yellow";
+            document.getElementById("parrafo").style.color = "blue";
+        }
+    </script>
+</body>
+</html>

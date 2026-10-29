@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estiloCaja.css">
+    <title>Mostrar/Ocultar caja</title>
+</head>
+<body>
+    <button id="cambiar" onclick="Cambiar()">Ocultar caja</button>
+    <div id="caja"></div>
+
+    <script>
+        function Cambiar() {
+            const boton = document.getElementById("cambiar");
+            const caja = document.getElementById("caja");
+
+            if (boton.textContent === "Ocultar caja") {
+                boton.textContent = "Mostrar caja";
+                caja.style.display = "none";
+            } else {
+                boton.textContent = "Ocultar caja";
+                caja.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

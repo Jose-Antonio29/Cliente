@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #contador {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+    <title>Contador de clics</title>
+</head>
+<body>
+    <h1>Contador de clics</h1>
+    <button onclick="contar()">Contar clics</button>
+    <p>Has hecho clic <span id="contador">0</span> veces</p>
+
+
+    <script>
+        let conta = 0;
+        function contar() {
+            conta++
+            document.getElementById("contador").textContent = conta;
+        }
+    </script>
+</body>
+</html>

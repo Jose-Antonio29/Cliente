@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="estiloCaja.css">
+    <style>
+        #caja {
+            width: 300px;
+        }
+
+        #hexa {
+            color: #F50000;
+        }
+    </style>
+    <title>Cambiar el color de la caja</title>
+</head>
+<body>
+    <div id="caja"></div>
+    <p id="hexa">#F50000</p>
+    <button onclick="cambiarColor()">Cambiar color</button>
+
+    <script>
+        function generarColorAleatorio() {
+            let letras = "0123456789ABCDEF";
+            let color = "#";
+            
+            for (let i=0; i<6; i++) {
+                color+= letras[Math.floor(Math.random()*letras.length)];
+            }
+            return color;
+        }
+
+        function cambiarColor() {
+            let color = generarColorAleatorio();
+            const hexa = document.getElementById("hexa");
+            document.getElementById("caja").style.backgroundColor = color;
+            hexa.textContent = color;
+            hexa.style.color = color;
+            
+        }
+    </script>
+</body>
+</html>

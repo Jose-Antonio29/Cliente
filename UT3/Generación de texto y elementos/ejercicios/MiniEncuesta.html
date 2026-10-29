@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #botones {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #respuesta {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #estadisticas {
+            background-color: #f9f9f9;
+            border: 1px solid #CCCCCC;
+            margin-top: 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+    <title>Mini encuesta</title>
+</head>
+<body>
+    <h1>Mini encuesta</h1>
+    <p>¿Crees que vas a aprobar el curso?</p>
+    <button onclick="responder('Sí')">Sí</button> 
+    <button onclick="responder('No')">No</button> 
+    <button onclick="responder('NS/NC')">NS/NC</button>
+
+    <p id="respuesta"></p>
+
+    <div id="estadisticas">
+        <p>Respuestas "Sí": <span id="si">0</span></p>
+        <p>Respuestas "No": <span id="no">0</span></p>
+        <p>Respuestas "NS/NC": <span id="ns">0</span></p>
+    </div>
+
+    <script>
+        let cantS = 0;
+        let cantN = 0;
+        let cantNS = 0;
+
+       function responder(opcion) {
+            // Mostramos la última respuesta
+            document.getElementById("respuesta").textContent = "Has respondido: " + opcion;
+
+            // Actualizar contador según la opción
+            if (opcion === "Sí") {
+                cantS++;
+                document.getElementById("si").textContent = cantS;
+            } else if (opcion === "No") {
+                cantN++;
+                document.getElementById("no").textContent = cantN;
+            } else {
+                cantNS++;
+                document.getElementById("ns").textContent = cantNS;
+            }
+       }
+    </script>
+</body>
+</html>
