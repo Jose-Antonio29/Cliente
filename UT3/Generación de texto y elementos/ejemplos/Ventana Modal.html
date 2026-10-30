@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VentanaModal.css">
+    <title>Ventana modal</title>
+</head>
+<body>
+    <button onclick="abrirModal()">Abrir modal</button>
+
+    <div id="overlay">
+        <div id="modal">
+            <h2>Ventana Modal</h2>
+            <p>Haz clic en el botón para cerrar la ventana</p>
+            <button onclick="cerrarModal()">Cerrar modal</button>
+        </div>
+    </div>
+
+    <script>
+        /* Muestra el modal cambiando el display del overlay */
+        function abrirModal() {
+            document.getElementById("overlay").style.display = "flex";
+            // Al usar flex, el modal queda cnetrado
+        }
+
+        /* Ocultar el overlay */
+        function cerrarModal() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listaNoms.css">
+    <title>Lista de nombres</title>
+</head>
+<body>
+    <h2>Lista de nombres</h2>
+    <input type="text" id="name" placeholder="Escribe un nombre">
+    <button onclick="añadirNombre()">Añadir nombre</button>
+    <ul id="lista"></ul>
+
+    <script>
+        
+        
+        function añadirNombre() {
+            let nombre = document.getElementById("name").value;
+            let lista = document.getElementById("lista");
+
+            // Evitamos añadir nombres vacíos
+            if (nombre.trim() !== "") {
+                // Creamos un nuevo elememto <li>
+                let li = document.createElement("li");
+                li.textContent = nombre;
+
+                // Añadimos el nuevo elemento a la lista
+                lista.appendChild(li);
+            }
+            // Limpiamos el campo de texto
+            document.getElementById("name").value = "";
+        }
+    </script>
+</body>
+</html>
