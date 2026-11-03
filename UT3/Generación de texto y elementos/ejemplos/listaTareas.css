@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+input, button {
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px auto;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton-borrar {
+    background-color: #ff6961;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    padding: 4px 8px;
+}
+
+.boton-borrar:hover {
+    background-color: #f50000;
+    cursor: pointer;
+}

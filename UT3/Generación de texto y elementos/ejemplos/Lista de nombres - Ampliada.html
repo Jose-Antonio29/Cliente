@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listaNoms.css">
+    <style>
+        #resultado {
+            background-color: #e1f5fe;
+            border: 2px solid #0288d1;
+            border-radius: 6px;
+            margin: 25px 0;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #0277bd;
+            min-width: 220px;
+            display: none;
+        }
+    </style>
+    <title>Lista de nombres</title>
+</head>
+<body>
+    <h2>Lista de nombres</h2>
+    <input type="text" id="name" placeholder="Escribe un nombre">
+    <button onclick="añadirNombre()">Añadir nombre</button>
+    <button onclick="elegirAleatorio()">Elegir nombre aleatorio</button>
+    <ul id="lista"></ul>
+    <div id="resultado"></div>
+
+    <script>
+        // Array para guardar los nombres añadidos
+        let nombres = [];
+        
+        function añadirNombre() {
+            let nombre = document.getElementById("name").value;
+            let lista = document.getElementById("lista");
+
+            // Evitamos añadir nombres vacíos
+            if (nombre.trim() !== "") {
+                // Creamos un nuevo elememto <li>
+                let li = document.createElement("li");
+                li.textContent = nombre;
+
+                // Añadimos el nuevo elemento a la lista
+                lista.appendChild(li);
+
+                // Añadimos el nombre al array de nombres
+                nombres.push(nombre);
+            }
+            // Limpiamos el campo de texto
+            document.getElementById("name").value = "";
+        }
+
+        function elegirAleatorio() {
+            let res = document.getElementById("resultado");
+
+            if (nombres.length == 0) {
+                alert("No hay nombres en la lista!");
+            } else {
+                let randNom = Math.floor(Math.random()*nombres.length);
+                res.textContent = "Nombre elegido: " + nombres[randNom];
+                res.style.display = "inline-block";
+            }
+        }
+    </script>
+</body>
+</html>

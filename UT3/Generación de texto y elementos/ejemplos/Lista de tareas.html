@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listaTareas.css">
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <h2>Lista de tareas</h2>
+    <input type="text" id="task" placeholder="Escribe una tarea">
+    <button onclick="añadirTarea()">Añadir tarea</button>
+    <ul id="lista"></ul>
+
+    <script>
+        
+        
+        function añadirTarea() {
+            let tarea = document.getElementById("task").value;
+            let lista = document.getElementById("lista");
+
+            // Evitamos añadir tareas vacías
+            if (tarea.trim() !== "") {
+                // Creamos un nuevo elememto <li>
+                let li = document.createElement("li");
+                li.textContent = tarea;
+
+                // Creamos el botón X
+                let botonBorrar = document.createElement("button");
+                botonBorrar.textContent = "X";
+                botonBorrar.className = "boton-borrar";
+                botonBorrar.onclick = function () {
+                    // Eliminar este <li> concreto
+                    lista.removeChild(li);
+                };
+
+                // Añadimos el botón a su tarea correspondiente
+                li.appendChild(botonBorrar);
+
+                // Añadimos el nuevo elemento a la lista
+                lista.appendChild(li);
+            }
+            // Limpiamos el campo de texto
+            document.getElementById("task").value = "";
+        }
+    </script>
+</body>
+</html>
