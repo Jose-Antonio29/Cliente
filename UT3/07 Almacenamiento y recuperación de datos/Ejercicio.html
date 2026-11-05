@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+    <h1>Ejemplo de almacenamiento con localStorage</h1>
+    <label for="name">Introduce tu nombre:</label><br>
+    <input type="text" id="name" placeholder="Escribe aquí tu nombre">
+    <button onclick="guardarItem()">Guardar</button>
+    <button onclick="borrarItem()">Borrar</button>
+
+    <h2 id="saludo"></h2>
+
+    <script>
+        // Al cargar la p´gina, comprobar si hay un nombre guardado
+        let savedName = localStorage.getItem("nombreUsuario");
+        if (savedName) {
+            document.getElementById("saludo").textContent = "Bienvenido de nuevo, "+ savedName;
+        }
+
+        // Función para guardar nombre en localStorage
+        function guardarItem() {
+            let name = document.getElementById("name").value;
+            if (name) {
+                localStorage.setItem("nombreUsuario", name);
+                document.getElementById("saludo").textContent = "¡Hola, "+name+"! Tu nombre se ha guardado.";
+            } else {
+                alert("Por favor, introduce un nombre");
+            }
+        }
+
+        // Función para borrar un nombre de localStorage
+        function borrarItem() {
+            localStorage.removeItem("nombreUsuario");
+            document.getElementById("saludo").textContent = "Se ha borrado el nombre almacenado.";
+        }
+    </script>
+</body>
+</html>

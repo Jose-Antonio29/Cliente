@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de interacción con el usuario</title>
+</head>
+<body>
+    <h1>Interacción con el usuario</h1>
+    <p id="info"></p>
+
+    <script>
+        alert("¡Bienvenido a la página!");
+        
+        let nom = prompt("Introduce tu nombre");
+        if (nom == null || nom.trim() == "") {
+            nom = "invitado";
+        }
+
+        let confirmacion = confirm("¿Quieres recibir un saludo personalizado?");
+        let opcion = "";
+        if (confirmacion) {
+            alert("Hola, "+nom+"!");
+            opcion = "Sí";
+        } else {
+            alert("Hasta pronto!");
+            opcion = "No";
+        }
+
+        let info = document.getElementById("info");
+        info.innerHTML = `Nombre usado: <b>${nom}</b><br>
+                          ¿Saludo aceptado?: <b>${opcion}</b>`
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana principal</title>
+</head>
+<body>
+    <h1>Ventana principal</h1>
+    <p>Introduce un mensaje para la ventana secundaria</p>
+    <input type="text" id="mensaje" placeholder="Escribe algo aquí...">
+    <button onclick="abrirVentana()">Abrir ventana secundaria</button>
+
+    <script>
+        let nuevaVentana;
+
+        function abrirVentana() {
+            // Abrir nueva ventana
+            nuevaVentana = window.open("hija.html", "ventanaHija", "width=400,heigth=300");
+
+            // Recuperar mensaje escrito en el input
+            let texto = document.getElementById("mensaje").value;
+
+            // Pasar el mensaje a la ventana secundaria (si ya está cargada)
+            setTimeout(function() {
+                if (nuevaVentana && !nuevaVentana.closed) {
+                    nuevaVentana.document.body.innerHTML += "<p><b>Mensaje desde principal:</b> "+texto+"</p>";
+                }
+            },500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+    <script>
+        // Guardar un dato
+        localStorage.setItem("usuario", "Víctor");
+
+        // Recuperar un dato
+        let user = localStorage.getItem("usuario");
+        alert("Usuario almacenado: "+user);
+
+        // Eliminar un dato
+        localStorage.removeItem("usuario");
+
+        // Vaciar todo
+        localStorage.clear();
+    </script>
+</body>
+</html>

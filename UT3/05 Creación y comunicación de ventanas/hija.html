@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana secundaria</title>
+</head>
+<body>
+    <h2>Ventana Secundaria</h2>
+    <p>Esta ventana fue abierta por la página
+        <b id="origen"></b>
+    </p>
+
+    <script>
+        // Mostrar la URL de la ventana que al abrió
+        document.getElementById("origen").textContent = window.opener.location.href;
+    </script>
+</body>
+</html>
