@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrapar el topo</title>
+    <link rel="stylesheet" href="estilosTopo.css">
+</head>
+
+<body>
+    <h1>ATRAPAR EL TOPO</h1>
+
+    <div id="marcadores">
+        <span>Tiempo restante: <b id="tiempo">15</b> s</span>
+        <span>Aciertos: <b id="aciertos">0</b></span>
+        <span>Fallos: <b id="fallos">0</b></span>
+        <span>Puntos: <b id="puntos">0</b></span>
+        <span>Record: <b id="record">0</b></span>
+    </div>
+
+    <table id="tablero">
+        <tr>
+            <td class="casilla" onclick="golpear(0)"></td>
+            <td class="casilla" onclick="golpear(1)"></td>
+            <td class="casilla" onclick="golpear(2)"></td>
+        </tr>
+        <tr>
+            <td class="casilla" onclick="golpear(3)"></td>
+            <td class="casilla" onclick="golpear(4)"></td>
+            <td class="casilla" onclick="golpear(5)"></td>
+        </tr>
+        <tr>
+            <td class="casilla" onclick="golpear(6)"></td>
+            <td class="casilla" onclick="golpear(7)"></td>
+            <td class="casilla" onclick="golpear(8)"></td>
+        </tr>
+    </table>
+
+    <button onclick="iniciarJuego()">Iniciar juego</button>
+
+    <p id="mensaje"></p>
+
+    <script src="atraparTopo.js"></script>
+</body>
+</html>

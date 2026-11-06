@@ -1,0 +1,59 @@
+/* Estilos generales de la página */
+body {
+    font-family: Arial, sans-serif;     
+    background-color: #f2f2f2;        /* Fondo gris claro */
+    text-align: center;                 /* Centra el texto y elementos en línea */
+}
+
+/* Marcadores: tiempo y aciertos*/
+#marcadores {
+    margin-bottom: 20px;                /* Separación respecto al tablero */
+}
+
+#marcadores span {
+    margin: 10px;                       /* Separación entre los marcadores */
+}
+
+/* Tablero del juego */
+#tablero {
+    margin: 0 auto 20px;                /* Centra la tabla y deja 20px debajo */
+    border-spacing: 8px;                /* Separación entre las celdas */
+}
+
+/* Casillas del tablero */
+.casilla {
+    width: 100px;                       /* Anchura de cada casilla */
+    height: 100px;                      /* Altura de cada casilla */
+    background-color: #dddddd;        /* Fondo gris claro */
+    border: 1px solid #999999;        /* Borde gris */
+    text-align: center;                 /* Centra horizontalmente el topo */
+    font-size: 50px;                    /* Tamaño del emoji del topo */
+    cursor: pointer;                    /* Muestra una mano al pasar el ratón */
+}
+
+.casilla img {
+    width: 90px;
+    height: 85px;
+    object-fit: contain;
+}
+
+/* Botón para iniciar el juego */
+button {
+    padding: 10px 20px;                 /* Espacio interior: 10px vertical y 20px horizontal */
+    border: none;                       /* Elimina el borde */
+    border-radius: 8px;                 /* Redondea las esquinas del botón */
+    background-color: #6f0b0b;        /* Fondo rojo oscuro */
+    color: white;                     /* Texto blanco */
+    cursor: pointer;                    /* Muestra una mano al pasar el ratón */
+    font-size: 1.1em;                   /* Tamaño de letra un 10% mayor que el del elemento padre */
+}
+
+button:hover {
+    background-color: #8c0d0d;        /* Cambia el fondo del botón al pasar el ratón */
+}
+
+
+/* Mensaje al finalizar la partida */
+#mensaje {
+    color: #333333;                   /* Texto gris oscuro */
+}
