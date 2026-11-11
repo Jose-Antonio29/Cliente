@@ -8,9 +8,9 @@ let fallos = 0;
 let puntos = 0;
 let golpeado = false;
 let jugando = false;
-let record = Number(localStorage.getItem("r")) || 0;
 
 // Mostramos el record en pantalla
+let record = Number(localStorage.getItem("recordPuntos")) || 0;
 document.getElementById("record").innerText = record;
 
 // Temporizadores
@@ -111,17 +111,17 @@ function finalizarJuego() {
     posicionTopo = -1;
 
     // Establecer el record según el número de aciertos
-    if (aciertos > record) {
-        record = aciertos;
+    if (puntos > record) {
+        record = puntos;
         
         // Guardar el nuevo récord
-        localStorage.setItem("r", record);
+        localStorage.setItem("recordPuntos", record);
 
         // Actualizar el maracador del récord
-        document.getElementById("r").innerText = record
+        document.getElementById("record").innerText = record
     }
 
     // Mostrar mensaje final
     document.getElementById("mensaje").innerText =
-        "¡Tiempo terminado! Has conseguido "+aciertos+" aciertos.";
+        "¡Tiempo terminado! Has conseguido "+aciertos+" aciertos, "+fallos+" fallos y "+puntos+" puntos.";
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="juegoRapidez.css">
+
+    <title>Fase 1 boton que se mueve</title>
+
+</head>
+<body>
+    <div class="caja">
+        <span id="tiempo">Tiempo:</span>
+        <span id="aciertos">Aciertos:</span>
+    </div>
+    <div id="overlay">
+        <div id="modal">
+            <h2>Fin de la partida</h2>
+            <p id="totalAciertos"></p>
+            <button onclick="iniciarJuego()">Jugar de nuevo</button>
+        </div>
+    </div>
+    <button id="botonX" onclick="golpeado()">X</button>
+    <script src="juegoRapidez.js"></script>
+</body>
+</html>
