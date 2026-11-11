@@ -1,39 +1,66 @@
+dyt_yeyway — 20:35
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../estilos.css" rel="stylesheet" type="text/css" />
-    <style>
-        #fechahora {font-size: 2em; text-align: center;}
-    </style>
-    <title>Fecha y hora actual</title>
+    <title>Contador con parada y reanudacion</title>
 </head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #contador{font-size: 48px;}
+    button{
+        margin:10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+
+    }
+    #detener{
+        background-color: #d00;
+        color: white;
+    }
+    #continuar{
+        background-color: #09bb09;
+        color: white;
+    }
+
+</style>
 <body>
-    <h2>Fecha y hora actuales</h2>
-    <div class="caja" id="fechahora">
-        <p id="fecha"></p>
-        <p id="hora"></p>
-    </div>
-
+    <h2>Temporizador</h2>
+    <p id="contador">0</p>
+    <button id="continuar" onclick="continuar()">Continuar</button>
+    <button id="detener" onclick="detener()">Detener</button>
     <script>
-        
-        function mostrarFechaHora() {
-            // Obtenemos la fecha y hora actual
-            const fecha = new Date();
-
-            // Fecha y hora en formato local
-            document.getElementById("fecha").textContent=fecha.toLocaleDateString();
-            document.getElementById("hora").textContent=fecha.toLocaleTimeString();
+        let segundos=0          //variable que guarda la cantidad de segundos
+        let activo=true;          //controla si el temporizadore está activo 
+        //funcion que incrementa el contador y lo muestra
+        function aumentar(){
+            if(activo){
+                segundos++
+                document.getElementById("contador").innerText=segundos;
+            }
+           //Volvemos a llamar contar() despues de 1 segundo
+           setTimeout(aumentar,1000); 
         }
-
-        // Mostramos la hora nada más cargar la página
-        mostrarFechaHora();
-
-        // Actualizamos la hora cada segundo
-        setInterval(mostrarFechaHora, 1000);
-
+        //Iniciamos el temporizador al cargar la página
+        aumentar();
+        //detiene el temporizador 
+        function detener(){
+            activo=false;
+        }
+        //funcion para continuar la cuenta
+        function continuar(){
+            activo=true;
+        }
         
+
     </script>
 </body>
 </html>

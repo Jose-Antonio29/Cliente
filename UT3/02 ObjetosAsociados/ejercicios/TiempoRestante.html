@@ -31,13 +31,13 @@
 
             // Creamos la fecha del 31 de diciembre 
             const finAño=new Date(añoActual,11,31,23,59,59);    //mes 11=diciembre
-            console.log(finAño)
+            console.log(finAño);
 
-            document.getElementById("finAnio").innerHTML=`<strong>Fin de año: </strong> ${finAño.toLocaleDateString()}, ${finAño.toLocaleTimeString()}`
+            document.getElementById("finAnio").innerHTML=`<strong>Fin de año: </strong> ${finAño.toLocaleDateString()}, ${finAño.toLocaleTimeString()}`;
             
             // Calculamos la diferencia en milisegundos
-            const diferenciaMS=finAño-fecha;;
-            console.log(diferenciaMS)
+            const diferenciaMS=finAño-fecha;
+            console.log(diferenciaMS);
             
             // Convertimos milisegundos a dias horas y minutos
             let msSegundo = 1000;
