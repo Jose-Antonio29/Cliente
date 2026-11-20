@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function esPar(x) {
+            if (!Number.isInteger(x)) {
+                console.log("Error: el argumento debe ser un número");
+            } else {
+                if (x % 2 === 0) {
+                    console.log(true);
+                } else {
+                    console.log(false);
+                }
+            }
+        }
+
+        esPar(4);
+        esPar(7);
+        esPar("hola");
+        esPar(null);
+        esPar(undefined);
+
+    </script>
+</body>
+</html>
