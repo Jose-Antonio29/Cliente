@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos arrays</title>
+</head>
+<body>
+    <script>
+        let alumnos = ["Ana", "Luis", "María", "Jorge"];
+
+        console.log(alumnos[0]);                       // Ana 
+        console.log(alumnos[1]);                       // Luis
+        console.log(alumnos[2]);                       // María
+        console.log(alumnos[alumnos.length - 1]);    // Jorge
+        console.log(alumnos);
+
+        console.log("---------------Edición de elementos----------------");
+
+        // Buscar elementos
+        console.log(alumnos.indexOf("pepe"));       // Si no encuentra devuelve -1
+        console.log(alumnos.indexOf("María"));      // 2
+        console.log(alumnos.includes("Luis"));      // true       
+
+        // Añadir elementos
+        alumnos.push("Elena");                      // Añade al final
+        console.log(alumnos);         
+        alumnos.unshift("Pedro");                   // Añade al inicio
+        console.log(alumnos);      
+
+        // Borrar elementos
+        alumnos.pop();                              // Elimina el último 
+        console.log(alumnos);
+        alumnos.shift();                            // Elimina el primero 
+        console.log(alumnos);
+        alumnos.splice(1,1);                        // Elimina el segundo 
+        console.log(alumnos);
+
+        console.log("-------------------Ordenación------------------------")
+        // Ordenar strings
+        alumnos.sort();                             // Orden alfabético 
+        console.log(alumnos);
+        alumnos.reverse();                          // Orden contrario 
+        console.log(alumnos);
+
+        // Ordenar arrays numéricos
+        let numeros = [5, 10, 2, 40, 15];
+        console.log(numeros);
+        numeros.sort();                             // Como ordena alfabéticamente no ordenará por orden numérico
+        console.log(numeros);
+
+        numeros.sort((a, b) => a - b);              // Orden ascendente (de menor a mayor)
+        console.log(numeros);
+
+        numeros.sort((a,b) => b - a);               // Orden descendente (de mayor a menor)
+        console.log(numeros);
+
+        console.log("-------------------Recorrer arrays-------------------");
+        // Con bucle for
+        for (let i=0; i < alumnos.length; i++) {
+            console.log((i+1), (alumnos[i]));
+        }
+
+        // Con bucle for of
+        for (let a of alumnos) {
+            console.log(a);
+        }
+
+        // Con bucle foreach
+        alumnos.forEach(a => console.log(a));
+
+
+    </script>
+</body>
+</html>

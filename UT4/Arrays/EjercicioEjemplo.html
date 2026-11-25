@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de repaso</title>
+</head>
+<body>
+    <script>
+        // Creamos un array con nombres de ciudades
+        let ciudades = ['Dublin', 'Moscow', 'Buenos Aires', 'Brasilia', 'Madrid'];
+        console.log(ciudades);
+        
+        // Mostramos la primera ciudad
+        console.log(ciudades[0]);
+
+        // Mostramos la última ciudad
+        console.log(ciudades[ciudades.length-1]);
+
+        // Añadimos una nueva ciudad al final del array
+        ciudades.push("París");
+        console.log(ciudades);
+
+        // Añadimos una nueva ciudad al inicio del array
+        ciudades.unshift("Londres");
+        console.log(ciudades);
+
+        // Ordenamos alfabéticamente
+        ciudades.sort();
+        console.log(ciudades);
+
+        // Eliminamos la última ciudad
+        ciudades.pop();
+        console.log(ciudades);
+
+        // Recorremos el array
+        ciudades.forEach(c => console.log(c));
+
+    </script>
+</body>
+</html>
