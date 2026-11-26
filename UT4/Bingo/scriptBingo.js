@@ -4,6 +4,8 @@ let ultimoNum = null;
 let nuevoNum = null;
 let idNum = "";
 let contadorNums = 0;
+const INICIO = 1;
+const FIN = 90;
 
 
 // Recogemos los campos HTML que utilizaremos
@@ -95,6 +97,17 @@ function generarNumero() {
     // Eliminamos ese número de nuestro array para que ya no pueda salir más
     numerosDisponibles.splice(pos, 1);
     console.log(numerosDisponibles);
+
+    // Actualizamos la cantidad de números que han salido
+    contadorNums++;
+    console.log(contadorNums);
+
+    // Actualizamos el mensaje de números generados
+    if (contadorNums == 1) {
+        mensaje.textContent = "Ha salido 1 número.";
+    } else {
+        mensaje.textContent = "Han salido "+contadorNums+" números";
+    }
     
     // Guardamos el valor del último número
     ultimoNum = nuevoNum;
@@ -107,7 +120,7 @@ function posDisponibleRandom(array) {
 
 // Función que inserta los números del 1 al 90 en el array numerosDisponibles
 function insertarNums() {
-    for (let i=1; i<=90; i++) {
+    for (let i=INICIO; i<=FIN; i++) {
         numerosDisponibles.push(i);
     }
 }
