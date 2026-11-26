@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio repaso de matrices</title>
+</head>
+<body>
+    <script>
+        // Creamos una matriz 3X3 con los valores del 1 al 9
+        let nums = [
+            [1,2,3],
+            [4,5,6],
+            [7,8,9],
+        ];
+
+        // Calculamos y mostramos la suma de todos los elementos de la matriz
+        let suma = 0;
+        for (array of nums) {
+            for (n of array) {
+                suma+=n;
+            }
+        }
+        console.log(suma);
+
+        // Calculamos y mostramos al suma de la segunda fila
+        suma = 0;
+        for (let i=1; i <= 1; i++) {
+            for (let j = 0; j<nums[i].length; j++) {
+                suma+=nums[i][j];
+            }
+        }
+        console.log(suma);
+    </script>
+</body>
+</html>

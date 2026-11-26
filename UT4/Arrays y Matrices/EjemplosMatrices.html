@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrices</title>
+</head>
+<body>
+    <script>
+        // Creamos un array bidimensional
+        let tablero = [
+            ["X", "O", "X"],
+            ["O", "X", "O"],
+            ["X", "O", "X"],
+        ];
+
+        // Mostramos el elemento en fila 2, columna 3
+        console.log("Elemento en fila 2, columna 3: ",tablero[1][2]);       // "O"
+
+        // Cambiamos el valor de la posición central (fila 2, columna 2)
+        tablero[1][1] = "O";
+
+        console.log("Tablero: ");
+        for (let i = 0; i < tablero.length; i++) {
+            let fila = "";
+            for (let j=0; j < tablero[i].length; j++) {
+                fila+= tablero[i][j]+"";
+            }
+            console.log(fila);
+        }
+
+        // El método join devuelve una cadena de texto con los elementos de la matriz separados por un separador específicado en el argumento
+        console.log("Tablero:")
+        for (let fila of tablero) {
+            console.log(fila.join(" "));
+        }
+
+    </script>
+</body>
+</html>

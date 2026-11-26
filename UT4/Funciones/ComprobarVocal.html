@@ -6,12 +6,31 @@
     <title>Comprobar vocal</title>
 </head>
 <body>
+    <h2>¿Es Vocal?</h2>
+    <p>Introduzca un carácter para comprobar si es una vocal o no:</p>
+
+
     <script>
+        let vocales = ["A","E","I","O","U","Á","É","Í","Ó","Ú"];
         // Función que comprueba si un carácter pasado como parámetro es Vocal o no
         function esVocal(car) {
-            let char = car.trim();
-           
+            if (typeof car == "number") {
+                return false;
+            }
+
+            for (vocal of vocales) {
+                if (vocal == car.toUpperCase()) {
+                    return true;
+                }
+            }
+            
+           return false;
         }
+
+        console.log(esVocal("A"));
+        console.log(esVocal("e"));
+        console.log(esVocal(1));
+
     </script>
 </body>
 </html>
