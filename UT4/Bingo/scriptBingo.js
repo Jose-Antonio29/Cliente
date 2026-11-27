@@ -3,7 +3,7 @@ let numerosDisponibles = [];
 let ultimoNum = null;
 let nuevoNum = null;
 let idNum = "";
-let contadorNums = 0;
+let pos = null;
 const INICIO = 1;
 const FIN = 90;
 
@@ -37,14 +37,14 @@ function dibujarTablero() {
     let numeroActual = 1;
     
     // 4. Queremos crear 9 filas. Cada fila tendrá hasta 10 números.
-    for (let fila = 0; fila < 9; fila++) {
+    for (let fila = 0; fila < 10; fila++) {
         
         // Creamos un <div> para la fila y le ponemos la clase "fila"
         let divFila = document.createElement("div");
         divFila.className = "fila";
         
         // Dentro de cada fila, intentamos colocar 10 números
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 9; i++) {
             
             // Creamos un <span> para mostrar el número
             let spanNumero = document.createElement("span");
@@ -73,44 +73,62 @@ function dibujarTablero() {
 
 // Función que genera un nuevo número aleatorio que no haya salido aún (onclick del botón 'Generar número')
 function generarNumero() {
-    // Generamos y guardamos un número entre 1 y 90
-    let pos = posDisponibleRandom(numerosDisponibles);
-    nuevoNum = numerosDisponibles[pos];
-    console.log(nuevoNum);
-    
-    // Si el valor del último número está inicializado cambiamos su estilo
-    if (ultimoNum != null) {
-        let idUltimoNum = "num-"+ultimoNum;
-        document.getElementById(idUltimoNum).classList.remove("ultimo");
-        document.getElementById(idUltimoNum).classList.add("anteriores");
-    }
-
-    // Mostramos el número generado por pantalla
-    ultimaBola.textContent = nuevoNum;
-    
-    // Guardamos el id del número que hemos sacado
-    idNum = "num-"+nuevoNum;
-    
-    // Actualizamos el estilo del tablero para el número 
-    document.getElementById(idNum).classList.add("ultimo");
-    
-    // Eliminamos ese número de nuestro array para que ya no pueda salir más
-    numerosDisponibles.splice(pos, 1);
-    console.log(numerosDisponibles);
-
-    // Actualizamos la cantidad de números que han salido
-    contadorNums++;
-    console.log(contadorNums);
-
-    // Actualizamos el mensaje de números generados
-    if (contadorNums == 1) {
-        mensaje.textContent = "Ha salido 1 número.";
+    // Comprobamos si el array de números disponibles está vacío (ha terminado el juego)
+    if (numerosDisponibles.length == 0) {
+        let playAgain = confirm("Ya han salido todos los números. ¿Quieres jugar otra vez?");
+        if (playAgain) {
+            // Si el usuario quiere seguir jugando rellenamos el array de números y reinicamos el juego
+            reiniciarJuego();
+        } else {
+            mensaje.textContent="Juego finalizado";
+        }
     } else {
-        mensaje.textContent = "Han salido "+contadorNums+" números";
+        console.log(numerosDisponibles);
+        // Generamos y guardamos un número entre 1 y 90
+        pos = posDisponibleRandom(numerosDisponibles);
+        nuevoNum = numerosDisponibles[pos];
+
+        // Eliminamos ese número de nuestro array para que ya no pueda salir más
+        numerosDisponibles.splice(pos, 1);
+        console.log("long=",numerosDisponibles.length);
+
+        console.log("nuevo=",nuevoNum);
+        
+        // Si el valor del último número está inicializado cambiamos su estilo
+        if (ultimoNum != null) {
+            let idUltimoNum = "num-"+ultimoNum;
+            document.getElementById(idUltimoNum).classList.remove("ultimo");
+            document.getElementById(idUltimoNum).classList.add("anteriores");
+        }
+
+        // Actualizamos el estilo del tablero para el número 
+        idNum = "num-"+nuevoNum;
+        document.getElementById(idNum).classList.add("ultimo");
+
+        // Mostramos el número generado por pantalla
+        ultimaBola.textContent = nuevoNum;
+        
+        // Actualizamos el mensaje de números generados
+        if ((FIN-numerosDisponibles.length) == 1) {
+            mensaje.textContent = "Ha salido 1 número.";
+        } else {
+            mensaje.textContent = "Han salido "+(FIN-numerosDisponibles.length)+" números";
+        }
+        
+        // Guardamos el valor del último número
+        ultimoNum = nuevoNum;
     }
-    
-    // Guardamos el valor del último número
-    ultimoNum = nuevoNum;
+
+}
+
+// Función que renicía el juego
+function reiniciarJuego() {
+    numerosDisponibles = [];
+    ultimoNum = null;
+    insertarNums();
+    dibujarTablero();
+    ultimaBola.textContent="-";
+    mensaje.textContent='Pulsa "Generar número" para sacar una bola.';
 }
 
 // Función que selecciona de manera aleatoria un número de un array dado
